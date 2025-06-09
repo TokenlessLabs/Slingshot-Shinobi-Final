@@ -1,0 +1,994 @@
+fileFormatVersion: 2
+guid: 591aec5b39a3fd649b77a9b5e3c88836
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 297
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149ea929f7d58974d99ac64d52b4c192
+      internalID: -1692451826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 297
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f38d844b39e8441ad1d38d3dbf802e
+      internalID: 356059599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 297
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121ca2120df65934ea75885d75c2ed0e
+      internalID: -2020874404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 297
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51413de07fe462e44b3cea242a9602b8
+      internalID: -363971472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 297
+        width: 37
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acf5746246f13046b6b6962d631b757
+      internalID: 1241470063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 297
+        width: 37
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c248ea4cb47154d46a293e1070855484
+      internalID: -1343905074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 297
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51311dd6c39cc04eb57280b2290e2b6
+      internalID: -746877296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 297
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b0903912341ad4bae4b6dcd472e1d1
+      internalID: -1920053462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 297
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b640e917e5359348b72433a34707b9d
+      internalID: -245534473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 297
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30aa0888b6bbe754587165af829f2792
+      internalID: 612758445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 220
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf9fcb978cb02e48a5f5f238b01cad2
+      internalID: 2093758532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 219
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a065d7caef7f4e34a8cd4c0808ab9eb8
+      internalID: 2041746318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 219
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e2b037bca894c468705d2956d97c42
+      internalID: 1680796286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 220
+        width: 57
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15c151874517dd43a976606e5518bf0
+      internalID: -1755639736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 219
+        width: 57
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046fe71ec799021408f3a7d82bc0abb5
+      internalID: 1814599598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 219
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdb1feffa79d2543809fb1b001d4c8b
+      internalID: -554734305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 219
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac96636959fdc844941a05b9eed45b1
+      internalID: 525333150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 274
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a12df6060f46643926cec748b12b64
+      internalID: 1906459793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 219
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba758d0632b0ec4f8b37866838b9862
+      internalID: -47721270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 219
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec731d9b72428446b2fb248c33480e6
+      internalID: 529335242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 130
+        width: 50
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bfab02a31749246a8a3f8eb14f0f38
+      internalID: 1182328380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 156
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24b7818bb388194282d8552c8cf8f8c
+      internalID: -578006236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 172
+        width: 55
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7657347166bdfe45b4067f4f43049eb
+      internalID: -1421258596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 154
+        width: 37
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2051b893997c6a4d8df059106c96ce5
+      internalID: 966865744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 171
+        width: 55
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b3db1b722c10742b320f186b85baab
+      internalID: 807672052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 156
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6306e4250ada3344a107d42fe629218
+      internalID: 971386876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 142
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d1ece3ea7db9c4b8d9c2fcc51e8679
+      internalID: -52570912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 121
+        width: 42
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d858a7e66d605f4c9d94d1a432a108c
+      internalID: 1438306745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 112
+        width: 35
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57604396520f854eb962ff181593766
+      internalID: -573309801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 112
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1207fddf699480d4ea993d18d8cb78e7
+      internalID: 1884599056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 23
+        width: 37
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032304db256e173409b46db358318a9c
+      internalID: 114762151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 24
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfacca1b550190f4583bf9d94313ce83
+      internalID: 978564852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 24
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7aa5a22ef04a44cbe3a81747fcff32
+      internalID: -400817928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 24
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003775bbaea47bd40aca437951eba92e
+      internalID: 365942607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 23
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafbee5fd2d38854bb8b0340eb92ac88
+      internalID: 952182803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 24
+        width: 53
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612956eb44adb78418212295858ea85a
+      internalID: -1112361937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 23
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c96197f63888847be20e0784208f99
+      internalID: -2136032737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 24
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f00d3e7171605a48bfa5a9fcfff83d1
+      internalID: -1012212188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 23
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5c9b0e28b75884c859bc9a62669798
+      internalID: 943204872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjas-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 23
+        width: 66
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4aa60087ebbb354299f1986c36624cb
+      internalID: -282056082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ninjas-removebg-preview_0: -1692451826
+      ninjas-removebg-preview_1: 356059599
+      ninjas-removebg-preview_10: 2093758532
+      ninjas-removebg-preview_11: 2041746318
+      ninjas-removebg-preview_12: 1680796286
+      ninjas-removebg-preview_13: -1755639736
+      ninjas-removebg-preview_14: 1814599598
+      ninjas-removebg-preview_15: -554734305
+      ninjas-removebg-preview_16: 525333150
+      ninjas-removebg-preview_17: 1906459793
+      ninjas-removebg-preview_18: -47721270
+      ninjas-removebg-preview_19: 529335242
+      ninjas-removebg-preview_2: -2020874404
+      ninjas-removebg-preview_20: 1182328380
+      ninjas-removebg-preview_21: -578006236
+      ninjas-removebg-preview_22: -1421258596
+      ninjas-removebg-preview_23: 966865744
+      ninjas-removebg-preview_24: 807672052
+      ninjas-removebg-preview_25: 971386876
+      ninjas-removebg-preview_26: -52570912
+      ninjas-removebg-preview_27: 1438306745
+      ninjas-removebg-preview_28: -573309801
+      ninjas-removebg-preview_29: 1884599056
+      ninjas-removebg-preview_3: -363971472
+      ninjas-removebg-preview_30: 114762151
+      ninjas-removebg-preview_31: 978564852
+      ninjas-removebg-preview_32: -400817928
+      ninjas-removebg-preview_33: 365942607
+      ninjas-removebg-preview_34: 952182803
+      ninjas-removebg-preview_35: -1112361937
+      ninjas-removebg-preview_36: -2136032737
+      ninjas-removebg-preview_37: -1012212188
+      ninjas-removebg-preview_38: 943204872
+      ninjas-removebg-preview_39: -282056082
+      ninjas-removebg-preview_4: 1241470063
+      ninjas-removebg-preview_5: -1343905074
+      ninjas-removebg-preview_6: -746877296
+      ninjas-removebg-preview_7: -1920053462
+      ninjas-removebg-preview_8: -245534473
+      ninjas-removebg-preview_9: 612758445
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

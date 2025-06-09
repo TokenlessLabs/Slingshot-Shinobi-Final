@@ -1,0 +1,4 @@
+repository "izmaasif@meerablol@cloud"
+  path "/"
+    br "/main"
+    co "/main"
