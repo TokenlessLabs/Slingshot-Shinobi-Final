@@ -120,24 +120,14 @@ public class BossSpawnManager : MonoBehaviour
         {
             if (!levelCompleted)
             {
-                if (!waveInProgress || currentWave < wavesPerLevel)
-                {
-                    // Randomly determine the number of enemies to spawn
-                    int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
+                int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
 
-                    // Spawn random enemies off-screen
-                    for (int i = 0; i < randomEnemyCount; i++)
-                    {
-                        SpawnRandomEnemy();
-                    }
-
-                    // Wait before spawning the next batch of random enemies
-                    yield return new WaitForSeconds(randomSpawnInterval);
-                }
-                else
+                for (int i = 0; i < randomEnemyCount; i++)
                 {
-                    yield return null; // Wait until the next frame if wave is in progress or it's the last wave
+                    SpawnRandomEnemy();
                 }
+
+                yield return new WaitForSeconds(randomSpawnInterval);
             }
             else
             {

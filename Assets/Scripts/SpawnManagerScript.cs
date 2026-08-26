@@ -110,21 +110,14 @@ public class SpawnManager : MonoBehaviour
         {
             if (!levelCompleted)
             {
-                if (currentWave < wavesPerLevel)
-                {
-                    int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
+                int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
 
-                    for (int i = 0; i < randomEnemyCount; i++)
-                    {
-                        SpawnRandomEnemy();
-                    }
-
-                    yield return new WaitForSeconds(randomSpawnInterval);
-                }
-                else
+                for (int i = 0; i < randomEnemyCount; i++)
                 {
-                    yield return null;
+                    SpawnRandomEnemy();
                 }
+
+                yield return new WaitForSeconds(randomSpawnInterval);
             }
             else
             {

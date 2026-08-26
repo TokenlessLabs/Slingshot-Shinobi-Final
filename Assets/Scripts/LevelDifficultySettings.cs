@@ -18,7 +18,7 @@ public static class LevelDifficultySettings
         switch (SceneManager.GetActiveScene().name)
         {
             case "Level 1":
-                difficulty = Create(25f, 7, 1, 10f, 1, 2);
+                difficulty = Create(25f, 10, 1, 5f, 1, 2);
                 return true;
             case "Level 2":
                 difficulty = Create(22f, 12, 2, 8f, 2, 4);
