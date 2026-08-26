@@ -15,16 +15,6 @@ public class PlayerMovementWithJoystick : MonoBehaviour
 
     void Start()
     {
-        if (MapBoundarySettings.TryGetWalkableBounds(out Bounds walkableBounds))
-        {
-            float playerHalfWidth = GetComponent<Collider2D>()?.bounds.extents.x ?? 0f;
-            float playerHalfHeight = GetComponent<Collider2D>()?.bounds.extents.y ?? 0f;
-            minX = walkableBounds.min.x + playerHalfWidth;
-            maxX = walkableBounds.max.x - playerHalfWidth;
-            minY = walkableBounds.min.y + playerHalfHeight;
-            maxY = walkableBounds.max.y - playerHalfHeight;
-        }
-
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
