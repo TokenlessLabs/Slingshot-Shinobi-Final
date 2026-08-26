@@ -16,6 +16,9 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
+        GameplayState.Reset();
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
         Debug.Log("PauseManager script has started.");
         resumeButton.onClick.AddListener(ResumeGame);
         pauseButton.onClick.AddListener(TogglePause); 
@@ -27,6 +30,11 @@ public class PauseManager : MonoBehaviour
 
     void TogglePause()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPowerupOpen)
+        {
+            return;
+        }
+
         if (isPaused)
         {
             ResumeGame();
@@ -40,6 +48,8 @@ public class PauseManager : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f; 
+        AudioListener.pause = true;
+        GameplayState.SetPaused(true);
         pauseImage.SetActive(true); 
         isPaused = true;
         foreach (AudioSource audioSource in audioSources)
@@ -54,6 +64,8 @@ public class PauseManager : MonoBehaviour
     void ResumeGame()
     {
         Time.timeScale = 1f; 
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
         pauseImage.SetActive(false); 
         isPaused = false;
         foreach (AudioSource audioSource in audioSources)
@@ -68,16 +80,22 @@ public class PauseManager : MonoBehaviour
     void RestartLevel()
     {
         Time.timeScale = 1f;
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
+        GameplayState.Reset();
         SpawnManager script = FindObjectOfType<SpawnManager>();
-        script.disabled = true;
+        if (script != null) script.disabled = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void QuitToTitleScreen()
     {
         Time.timeScale = 1f;
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
+        GameplayState.Reset();
         SpawnManager script = FindObjectOfType<SpawnManager>();
-        script.disabled = true;
+        if (script != null) script.disabled = true;
         SceneManager.LoadScene("TitleScreen");
     }
 }

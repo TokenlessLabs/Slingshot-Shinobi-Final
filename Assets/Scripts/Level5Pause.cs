@@ -14,6 +14,9 @@ public class Level5Pause : MonoBehaviour
 
     void Start()
     {
+        GameplayState.Reset();
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
         resumeButton.onClick.AddListener(ResumeGame);
         pauseButton.onClick.AddListener(TogglePause); 
         restartButton.onClick.AddListener(RestartLevel); 
@@ -24,6 +27,11 @@ public class Level5Pause : MonoBehaviour
 
     void TogglePause()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPowerupOpen)
+        {
+            return;
+        }
+
         if (isPaused)
         {
             ResumeGame();
@@ -37,6 +45,8 @@ public class Level5Pause : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f; 
+        AudioListener.pause = true;
+        GameplayState.SetPaused(true);
         pauseImage.SetActive(true); 
         isPaused = true;
     }
@@ -44,6 +54,8 @@ public class Level5Pause : MonoBehaviour
     void ResumeGame()
     {
         Time.timeScale = 1f; 
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
         pauseImage.SetActive(false); 
         isPaused = false;
     }
@@ -51,6 +63,9 @@ public class Level5Pause : MonoBehaviour
     void RestartLevel()
     {
         Time.timeScale = 1f;
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
+        GameplayState.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -58,6 +73,9 @@ public class Level5Pause : MonoBehaviour
     {
         Debug.Log("QuitToTitleScreen method called.");
         Time.timeScale = 1f;
+        AudioListener.pause = false;
+        GameplayState.SetPaused(false);
+        GameplayState.Reset();
         SceneManager.LoadScene("TitleScreen");
     }
 

@@ -18,6 +18,14 @@ public class GameComplete : MonoBehaviour
     public void Completion()
     {
         GameObject Panel = GameObject.FindGameObjectWithTag("CompletionPanel");
-        Panel.SetActive(true);
+        GameplayState.BeginTerminalState();
+        GameplayState.DisablePlayerGameplay();
+        GameplayState.StopGameplayAudio();
+        Time.timeScale = 0f;
+        AudioListener.pause = false;
+        if (Panel != null)
+        {
+            Panel.SetActive(true);
+        }
     }
 }

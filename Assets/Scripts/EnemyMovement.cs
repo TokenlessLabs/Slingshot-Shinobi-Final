@@ -35,6 +35,16 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal)
+        {
+            if (audioSource != null && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+            return;
+        }
+
         if (player != null)
         {
             Vector3 direction = (player.position - transform.position).normalized;

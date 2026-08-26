@@ -25,6 +25,11 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPaused || GameplayState.IsPowerupOpen)
+        {
+            return;
+        }
+
         shootTimer += Time.deltaTime;
         if (shootTimer >= shootInterval)
         {

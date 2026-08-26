@@ -12,8 +12,23 @@ public class PlayerMovementWithJoystick : MonoBehaviour
     public float minY = -1000f;
     public float maxY = 1000f;
     public bool flipped = false;
+
     void Start()
     {
+        if (LevelBoundary.TryGetBounds("Level 1", out Bounds mapBounds)
+            || LevelBoundary.TryGetBounds("Level 2", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 3", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 4", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 5", out mapBounds))
+        {
+            float playerHalfWidth = GetComponent<Collider2D>()?.bounds.extents.x ?? 0f;
+            float playerHalfHeight = GetComponent<Collider2D>()?.bounds.extents.y ?? 0f;
+            minX = mapBounds.min.x + playerHalfWidth;
+            maxX = mapBounds.max.x - playerHalfWidth;
+            minY = mapBounds.min.y + playerHalfHeight;
+            maxY = mapBounds.max.y - playerHalfHeight;
+        }
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -24,6 +39,12 @@ public class PlayerMovementWithJoystick : MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPaused || GameplayState.IsPowerupOpen)
+        {
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         Vector2 input = joystick.InputVector;
         Vector3 move = new Vector3(input.x, input.y, 0);
         Vector3 newPosition = transform.position + move * speed * Time.deltaTime;

@@ -41,6 +41,11 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPaused || GameplayState.IsPowerupOpen)
+        {
+            return;
+        }
+
         if (dashBar != null && !ready)
         {
             fillTimer += Time.deltaTime;

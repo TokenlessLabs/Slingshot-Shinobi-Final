@@ -29,6 +29,12 @@ public class TutorialMovement: MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPaused || GameplayState.IsPowerupOpen)
+        {
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         if (isJoystickLocked)
         {
             animator.SetFloat("Speed", 0);

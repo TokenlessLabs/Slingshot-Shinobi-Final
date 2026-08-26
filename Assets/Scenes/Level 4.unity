@@ -75514,15 +75514,15 @@ MonoBehaviour:
   - {fileID: 8867555226720276855, guid: 59a0613a5ce48684e90e372949ced128, type: 3}
   player: {fileID: 84524658}
   spawnRadius: 8
-  timeBetweenWaves: 14
-  enemiesPerWave: 20
-  wavesPerLevel: 4
+  timeBetweenWaves: 20
+  enemiesPerWave: 5
+  wavesPerLevel: 2
   mainCamera: {fileID: 519420031}
   offScreenBuffer: 20
   waveIncomingText: {fileID: 710233905}
-  randomSpawnInterval: 2
-  minRandomEnemies: 5
-  maxRandomEnemies: 8
+  randomSpawnInterval: 10
+  minRandomEnemies: 1
+  maxRandomEnemies: 2
   disabled: 0
   levelCompletionPanel: {fileID: 862690239}
   nextLevelButton: {fileID: 1130288031}

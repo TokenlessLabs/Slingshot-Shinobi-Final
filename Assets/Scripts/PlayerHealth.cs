@@ -15,9 +15,14 @@ public class PlayerHealth : MonoBehaviour
     public float zoomSize = 5f;
     public AudioSource damageAudioSource;
     public AudioClip damageSound;
+    public bool IsDead { get; private set; }
 
     void Start()
     {
+        GameplayState.Reset();
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        IsDead = false;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
@@ -79,6 +84,27 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        if (IsDead)
+        {
+            return;
+        }
+
+        IsDead = true;
+        GameplayState.BeginTerminalState();
+        GameplayState.DisablePlayerGameplay();
+        GameplayState.StopGameplayAudio();
+        AudioListener.pause = false;
+        PauseManager pauseManager = FindObjectOfType<PauseManager>();
+        if (pauseManager != null && pauseManager.pauseButton != null)
+        {
+            pauseManager.pauseButton.interactable = false;
+        }
+        Level5Pause level5Pause = FindObjectOfType<Level5Pause>();
+        if (level5Pause != null && level5Pause.pauseButton != null)
+        {
+            level5Pause.pauseButton.interactable = false;
+        }
+
         DisableAllEnemyScripts();
         SpawnManager spawner = FindObjectOfType<SpawnManager>();
         if (spawner != null)

@@ -17,6 +17,9 @@ public class Level5GameOver : MonoBehaviour
 
     public void ShowGameOverPanel()
     {
+        GameplayState.BeginTerminalState();
+        GameplayState.StopGameplayAudio();
+        AudioListener.pause = false;
         Time.timeScale = 0f; 
         gameOverPanel.SetActive(true); 
     }
