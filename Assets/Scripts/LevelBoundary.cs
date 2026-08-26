@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
-public static class LevelOneBoundary
+public static class LevelBoundary
 {
-    public static bool TryGetBounds(out Bounds bounds)
+    public static bool TryGetBounds(string levelName, out Bounds bounds)
     {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Level 1")
+        if (SceneManager.GetActiveScene().name != levelName)
         {
             bounds = default;
             return false;

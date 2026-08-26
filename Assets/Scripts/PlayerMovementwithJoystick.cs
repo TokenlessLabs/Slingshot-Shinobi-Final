@@ -15,7 +15,11 @@ public class PlayerMovementWithJoystick : MonoBehaviour
 
     void Start()
     {
-        if (LevelOneBoundary.TryGetBounds(out Bounds mapBounds) || LevelTwoBoundary.TryGetBounds(out mapBounds))
+        if (LevelBoundary.TryGetBounds("Level 1", out Bounds mapBounds)
+            || LevelBoundary.TryGetBounds("Level 2", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 3", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 4", out mapBounds)
+            || LevelBoundary.TryGetBounds("Level 5", out mapBounds))
         {
             float playerHalfWidth = GetComponent<Collider2D>()?.bounds.extents.x ?? 0f;
             float playerHalfHeight = GetComponent<Collider2D>()?.bounds.extents.y ?? 0f;
