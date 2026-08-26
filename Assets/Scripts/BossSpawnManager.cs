@@ -21,6 +21,7 @@ public class BossSpawnManager : MonoBehaviour
     private bool waveInProgress = false; // Track if a wave is in progress
     private bool levelCompleted = false; // Track if the level has been completed
     private bool bossSpawned = false; // Track if the boss has been spawned
+    private int randomEnemiesSpawned = 0;
     // Random spawn settings
     public float randomSpawnInterval = 5f; // Time between random spawns
     public int minRandomEnemies = 1; // Minimum number of random enemies to spawn
@@ -48,6 +49,7 @@ public class BossSpawnManager : MonoBehaviour
             randomSpawnInterval = difficulty.randomSpawnInterval;
             minRandomEnemies = difficulty.minRandomEnemies;
             maxRandomEnemies = difficulty.maxRandomEnemies;
+            randomEnemiesSpawned = 0;
         }
 
         if (mainCamera == null)
@@ -120,7 +122,16 @@ public class BossSpawnManager : MonoBehaviour
         {
             if (!levelCompleted)
             {
-                int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
+                int remainingRandomEnemies = LevelDifficultySettings.TryGetCurrent(out LevelDifficulty difficulty)
+                    ? difficulty.totalRandomEnemies - randomEnemiesSpawned
+                    : 0;
+                if (remainingRandomEnemies <= 0)
+                {
+                    yield return new WaitForSeconds(randomSpawnInterval);
+                    continue;
+                }
+
+                int randomEnemyCount = Mathf.Min(Random.Range(minRandomEnemies, maxRandomEnemies + 1), remainingRandomEnemies);
 
                 for (int i = 0; i < randomEnemyCount; i++)
                 {
@@ -200,6 +211,7 @@ public class BossSpawnManager : MonoBehaviour
 
             // Increment active enemies count for random enemies
             activeEnemies++;
+            randomEnemiesSpawned++;
         }
         else
         {

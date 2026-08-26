@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
     private int activeEnemies = 0;
     private bool waveInProgress = false;
     private bool levelCompleted = false;
+    private int randomEnemiesSpawned = 0;
     public float randomSpawnInterval = 5f;
     public int minRandomEnemies = 1;
     public int maxRandomEnemies = 3;
@@ -48,6 +49,7 @@ public class SpawnManager : MonoBehaviour
             randomSpawnInterval = difficulty.randomSpawnInterval;
             minRandomEnemies = difficulty.minRandomEnemies;
             maxRandomEnemies = difficulty.maxRandomEnemies;
+            randomEnemiesSpawned = 0;
         }
 
         if (mainCamera == null)
@@ -110,7 +112,16 @@ public class SpawnManager : MonoBehaviour
         {
             if (!levelCompleted)
             {
-                int randomEnemyCount = Random.Range(minRandomEnemies, maxRandomEnemies + 1);
+                int remainingRandomEnemies = LevelDifficultySettings.TryGetCurrent(out LevelDifficulty difficulty)
+                    ? difficulty.totalRandomEnemies - randomEnemiesSpawned
+                    : 0;
+                if (remainingRandomEnemies <= 0)
+                {
+                    yield return new WaitForSeconds(randomSpawnInterval);
+                    continue;
+                }
+
+                int randomEnemyCount = Mathf.Min(Random.Range(minRandomEnemies, maxRandomEnemies + 1), remainingRandomEnemies);
 
                 for (int i = 0; i < randomEnemyCount; i++)
                 {
@@ -181,6 +192,7 @@ public class SpawnManager : MonoBehaviour
             enemy.GetComponent<Enemy>().OnEnemyDestroyed += HandleEnemyDestroyed;
 
             activeEnemies++;
+            randomEnemiesSpawned++;
         }
         else
         {
