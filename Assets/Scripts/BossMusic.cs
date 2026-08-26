@@ -9,26 +9,19 @@ public class BossMusic : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (audioSource != null && levelMusic != null)
+        if (audioSource != null)
         {
-            audioSource.clip = levelMusic;
+            if (levelMusic != null)
+            {
+                audioSource.clip = levelMusic;
+            }
+
             audioSource.loop = true;
-            audioSource.Play();
+            if (audioSource.clip != null && !audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name != "Level 1") 
-        {
-            StopMusic();
-        }
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void StopMusic()

@@ -31,7 +31,31 @@ public class BossHealthBarsScript : MonoBehaviour
 
     public void GameComplete()
     {
-        CompletionPanel.SetActive(true);
+        if (GameplayState.IsTerminal)
+        {
+            return;
+        }
+
+        GameplayState.BeginTerminalState();
+        GameplayState.DisablePlayerGameplay();
+        GameplayState.StopGameplayAudio();
+        Time.timeScale = 0f;
+        AudioListener.pause = false;
+        PauseManager pauseManager = FindObjectOfType<PauseManager>();
+        if (pauseManager != null && pauseManager.pauseButton != null)
+        {
+            pauseManager.pauseButton.interactable = false;
+        }
+        Level5Pause level5Pause = FindObjectOfType<Level5Pause>();
+        if (level5Pause != null && level5Pause.pauseButton != null)
+        {
+            level5Pause.pauseButton.interactable = false;
+        }
+
+        if (CompletionPanel != null)
+        {
+            CompletionPanel.SetActive(true);
+        }
         StopMusic();
         PlayCompletionAudio();
     }

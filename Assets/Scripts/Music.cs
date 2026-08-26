@@ -9,28 +9,18 @@ public class Music : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (audioSource != null && levelMusic != null)
+        if (audioSource != null)
         {
-            audioSource.clip = levelMusic;
-            audioSource.loop = true; 
-            audioSource.Play();
-        }
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name != "Level 1")
-        {
-            if (audioSource != null)
+            if (levelMusic != null)
             {
-                audioSource.Stop();
+                audioSource.clip = levelMusic;
+            }
+
+            audioSource.loop = true;
+            if (audioSource.clip != null && !audioSource.isPlaying)
+            {
+                audioSource.Play();
             }
         }
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

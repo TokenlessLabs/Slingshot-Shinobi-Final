@@ -16,6 +16,11 @@ public class PowerupPanel : MonoBehaviour
 
     public void DisplayRandomPowerups()
     {
+        if (GameplayState.IsTerminal)
+        {
+            return;
+        }
+
         foreach (Transform slot in cardSlots)
         {
             foreach (Transform child in slot)
@@ -90,7 +95,13 @@ public class PowerupPanel : MonoBehaviour
 
     void OnCardSelected(int index)
     {
-        Powerup selectedPowerup = powerups[index];
+        Powerup selectedPowerup = System.Array.Find(powerups, powerup => powerup.id == index);
+        if (selectedPowerup == null)
+        {
+            Debug.LogWarning($"Powerup with ID {index} was not found.");
+            return;
+        }
+
         Debug.Log($"Selected Powerup: {selectedPowerup.description}, Stage: {selectedPowerup.stage}");
         GameObject playerObject = GameObject.Find("Player");
         ApplyPowerup(selectedPowerup, index, playerObject);

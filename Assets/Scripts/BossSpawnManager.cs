@@ -28,7 +28,7 @@ public class BossSpawnManager : MonoBehaviour
 
     void Start()
     {
-        if (enemyPrefabs.Length == 0)
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0)
         {
             Debug.LogError("Enemy prefabs are not assigned in SpawnManager.");
             return;
@@ -162,8 +162,13 @@ public class BossSpawnManager : MonoBehaviour
                 player.position.y + Mathf.Sin(angle) * distance,
                 0
             );
-            GameObject enemy = Instantiate(enemyPrefabs[currentWave % 2 == 0 ? 1 : 0], spawnPosition, Quaternion.identity);
-            enemy.GetComponent<Enemy>().OnEnemyDestroyed += HandleEnemyDestroyed;
+            int prefabIndex = currentWave % enemyPrefabs.Length;
+            GameObject enemy = Instantiate(enemyPrefabs[prefabIndex], spawnPosition, Quaternion.identity);
+            Enemy enemyComponent = enemy.GetComponent<Enemy>();
+            if (enemyComponent != null)
+            {
+                enemyComponent.OnEnemyDestroyed += HandleEnemyDestroyed;
+            }
         }
         else
         {
@@ -249,6 +254,7 @@ public class BossSpawnManager : MonoBehaviour
         {
             levelCompleted = true;
             Debug.Log("All enemies defeated. Moving to the next level.");
+            SaveProgress();
             LoadNextLevel();
         }
     }
@@ -257,22 +263,27 @@ public class BossSpawnManager : MonoBehaviour
     {
         try
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int nextLevelIndex = currentSceneIndex + 1;
+            string sceneName = SceneManager.GetActiveScene().name;
+            if (!sceneName.StartsWith("Level ") || !int.TryParse(sceneName.Substring(6), out int currentLevel))
+            {
+                return;
+            }
+
+            int nextLevel = currentLevel + 1;
 
             int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
-            Debug.Log($"Current unlocked level: {unlockedLevel}. Next level index: {nextLevelIndex}");
+            Debug.Log($"Current unlocked level: {unlockedLevel}. Next level: {nextLevel}");
 
-            if (nextLevelIndex > unlockedLevel)
+            if (nextLevel > unlockedLevel)
             {
-                PlayerPrefs.SetInt("UnlockedLevel", nextLevelIndex);
+                PlayerPrefs.SetInt("UnlockedLevel", nextLevel);
                 PlayerPrefs.Save();
-                Debug.Log($"Progress saved: Level {nextLevelIndex} unlocked.");
+                Debug.Log($"Progress saved: Level {nextLevel} unlocked.");
             }
             else
             {
-                Debug.Log($"No update needed. Current unlocked level ({unlockedLevel}) is higher than or equal to the next level index ({nextLevelIndex}).");
+                Debug.Log($"No update needed. Current unlocked level ({unlockedLevel}) is higher than or equal to the next level ({nextLevel}).");
             }
         }
         catch (System.Exception e)

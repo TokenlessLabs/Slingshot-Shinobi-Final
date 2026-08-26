@@ -11,6 +11,7 @@ public class PlayerCollecting : MonoBehaviour
     public GameObject fullCollectionPanel; // Reference to the panel that appears when the bar is full
     public float fillSpeed = 2f; // Speed at which the bar fills
     private Coroutine fillCoroutine;
+    private bool wasPausedBeforePowerup;
     public AudioSource collectionAudioSource;
     public AudioClip collectionSound;
 
@@ -67,8 +68,18 @@ public class PlayerCollecting : MonoBehaviour
 
     void ShowFullCollectionPanel()
     {
+        PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+        if (GameplayState.IsTerminal || (playerHealth != null && playerHealth.IsDead))
+        {
+            return;
+        }
+
         fullCollectionPanel.SetActive(true); 
+        wasPausedBeforePowerup = GameplayState.IsPaused;
+        GameplayState.SetPowerupOpen(true);
+        SetPauseButtonsInteractable(false);
         Time.timeScale = 0f; 
+        AudioListener.pause = true;
         PowerupPanel panel = fullCollectionPanel.GetComponent<PowerupPanel>();
         panel.DisplayRandomPowerups();
     }
@@ -76,8 +87,29 @@ public class PlayerCollecting : MonoBehaviour
     public void CloseFullCollectionPanel()
     {
         fullCollectionPanel.SetActive(false); 
-        Time.timeScale = 1f; 
+        GameplayState.SetPowerupOpen(false);
+        SetPauseButtonsInteractable(!wasPausedBeforePowerup);
+        if (!GameplayState.IsTerminal && !wasPausedBeforePowerup)
+        {
+            Time.timeScale = 1f;
+            AudioListener.pause = false;
+        }
         ResetCollectionBar(); 
+    }
+
+    private void SetPauseButtonsInteractable(bool interactable)
+    {
+        PauseManager pauseManager = FindObjectOfType<PauseManager>();
+        if (pauseManager != null && pauseManager.pauseButton != null)
+        {
+            pauseManager.pauseButton.interactable = interactable && !GameplayState.IsTerminal;
+        }
+
+        Level5Pause level5Pause = FindObjectOfType<Level5Pause>();
+        if (level5Pause != null && level5Pause.pauseButton != null)
+        {
+            level5Pause.pauseButton.interactable = interactable && !GameplayState.IsTerminal;
+        }
     }
 
     public void ResetCollectionBar()

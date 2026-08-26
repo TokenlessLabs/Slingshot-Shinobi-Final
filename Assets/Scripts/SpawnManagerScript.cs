@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        if (enemyPrefabs.Length == 0)
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0)
         {
             Debug.LogError("Enemy prefabs are not assigned in SpawnManager.");
             return;
@@ -145,8 +145,13 @@ public class SpawnManager : MonoBehaviour
                 0
             );
 
-            GameObject enemy = Instantiate(enemyPrefabs[currentWave % 2 == 0 ? 1 : 0], spawnPosition, Quaternion.identity);
-            enemy.GetComponent<Enemy>().OnEnemyDestroyed += HandleEnemyDestroyed;
+            int prefabIndex = currentWave % enemyPrefabs.Length;
+            GameObject enemy = Instantiate(enemyPrefabs[prefabIndex], spawnPosition, Quaternion.identity);
+            Enemy enemyComponent = enemy.GetComponent<Enemy>();
+            if (enemyComponent != null)
+            {
+                enemyComponent.OnEnemyDestroyed += HandleEnemyDestroyed;
+            }
         }
         else
         {
@@ -206,22 +211,27 @@ public class SpawnManager : MonoBehaviour
     {
         try
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int nextLevelIndex = currentSceneIndex + 1;
+            string sceneName = SceneManager.GetActiveScene().name;
+            if (!sceneName.StartsWith("Level ") || !int.TryParse(sceneName.Substring(6), out int currentLevel))
+            {
+                return;
+            }
+
+            int nextLevel = currentLevel + 1;
 
             int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
-            Debug.Log($"Current unlocked level: {unlockedLevel}. Next level index: {nextLevelIndex}");
+            Debug.Log($"Current unlocked level: {unlockedLevel}. Next level: {nextLevel}");
 
-            if (nextLevelIndex > unlockedLevel)
+            if (nextLevel > unlockedLevel)
             {
-                PlayerPrefs.SetInt("UnlockedLevel", nextLevelIndex);
+                PlayerPrefs.SetInt("UnlockedLevel", nextLevel);
                 PlayerPrefs.Save();
-                Debug.Log($"Progress saved: Level {nextLevelIndex} unlocked.");
+                Debug.Log($"Progress saved: Level {nextLevel} unlocked.");
             }
             else
             {
-                Debug.Log($"No update needed. Current unlocked level ({unlockedLevel}) is higher than or equal to the next level index ({nextLevelIndex}).");
+                Debug.Log($"No update needed. Current unlocked level ({unlockedLevel}) is higher than or equal to the next level ({nextLevel}).");
             }
         }
         catch (System.Exception e)
@@ -239,16 +249,54 @@ public class SpawnManager : MonoBehaviour
 
     void ShowLevelCompletionPanel()
     {
+        GameplayState.BeginTerminalState();
+        GameplayState.DisablePlayerGameplay();
+        GameplayState.StopGameplayAudio();
+        Time.timeScale = 0f;
+        AudioListener.pause = false;
+        if (nextLevelButton != null)
+        {
+            nextLevelButton.interactable = true;
+        }
+        else if (levelCompletionPanel != null)
+        {
+            nextLevelButton = levelCompletionPanel.GetComponentInChildren<Button>(true);
+            if (nextLevelButton != null)
+            {
+                nextLevelButton.onClick.AddListener(GoToLevelSelector);
+            }
+        }
+
+        PauseManager pauseManager = FindObjectOfType<PauseManager>();
+        if (pauseManager != null && pauseManager.pauseButton != null)
+        {
+            pauseManager.pauseButton.interactable = false;
+        }
+        Level5Pause level5Pause = FindObjectOfType<Level5Pause>();
+        if (level5Pause != null && level5Pause.pauseButton != null)
+        {
+            level5Pause.pauseButton.interactable = false;
+        }
+
         // Deactivate the gameplay elements
-        waveIncomingText.SetActive(false);
+        if (waveIncomingText != null)
+        {
+            waveIncomingText.SetActive(false);
+        }
         // Activate the level completion panel
-        levelCompletionPanel.SetActive(true);
+        if (levelCompletionPanel != null)
+        {
+            levelCompletionPanel.SetActive(true);
+        }
     }
 
     void GoToLevelSelector()
     {
         // Load the level selector scene
         Debug.Log("Going to level selector scene.");
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        GameplayState.Reset();
         SceneManager.LoadScene("Level Selector"); // Ensure "LevelSelector" is the name of your level selector scene
     }
 }

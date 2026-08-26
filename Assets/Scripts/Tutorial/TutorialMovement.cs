@@ -19,6 +19,16 @@ public class TutorialMovement: MonoBehaviour
 
     void Start()
     {
+        if (MapBoundarySettings.TryGetWalkableBounds(out Bounds walkableBounds))
+        {
+            float playerHalfWidth = GetComponent<Collider2D>()?.bounds.extents.x ?? 0f;
+            float playerHalfHeight = GetComponent<Collider2D>()?.bounds.extents.y ?? 0f;
+            minX = walkableBounds.min.x + playerHalfWidth;
+            maxX = walkableBounds.max.x - playerHalfWidth;
+            minY = walkableBounds.min.y + playerHalfHeight;
+            maxY = walkableBounds.max.y - playerHalfHeight;
+        }
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -29,6 +39,12 @@ public class TutorialMovement: MonoBehaviour
 
     void Update()
     {
+        if (GameplayState.IsTerminal || GameplayState.IsPaused || GameplayState.IsPowerupOpen)
+        {
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         if (isJoystickLocked)
         {
             animator.SetFloat("Speed", 0);
