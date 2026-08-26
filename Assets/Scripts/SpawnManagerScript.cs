@@ -40,6 +40,16 @@ public class SpawnManager : MonoBehaviour
             return;
         }
 
+        if (LevelDifficultySettings.TryGetCurrent(out LevelDifficulty difficulty))
+        {
+            timeBetweenWaves = difficulty.timeBetweenWaves;
+            enemiesPerWave = difficulty.enemiesPerWave;
+            wavesPerLevel = difficulty.wavesPerLevel;
+            randomSpawnInterval = difficulty.randomSpawnInterval;
+            minRandomEnemies = difficulty.minRandomEnemies;
+            maxRandomEnemies = difficulty.maxRandomEnemies;
+        }
+
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
