@@ -18,19 +18,19 @@ public static class LevelDifficultySettings
         switch (SceneManager.GetActiveScene().name)
         {
             case "Level 1":
-                difficulty = Create(25f, 7, 1, 12f, 1, 2);
+                difficulty = Create(25f, 7, 1, 10f, 1, 2);
                 return true;
             case "Level 2":
-                difficulty = Create(20f, 9, 2, 10f, 1, 3);
+                difficulty = Create(22f, 12, 2, 8f, 2, 4);
                 return true;
             case "Level 3":
-                difficulty = Create(18f, 10, 3, 8f, 2, 4);
+                difficulty = Create(20f, 16, 2, 7f, 3, 5);
                 return true;
             case "Level 4":
-                difficulty = Create(16f, 11, 4, 6f, 3, 5);
+                difficulty = Create(18f, 20, 3, 6f, 4, 6);
                 return true;
             case "Level 5":
-                difficulty = Create(14f, 12, 5, 5f, 4, 6);
+                difficulty = Create(16f, 24, 4, 5f, 5, 7);
                 return true;
             default:
                 difficulty = default;
